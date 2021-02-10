@@ -24,7 +24,7 @@ image:
   focal_point: ""
   placement: 2
   preview_only: false
-  filename: record.jpeg
+  filename: phil-botha-a0tj3hy-ud8-unsplash.jpg
 ---
 
 ## Overview
