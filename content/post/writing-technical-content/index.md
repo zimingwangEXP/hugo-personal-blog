@@ -7,7 +7,7 @@ highlight: true
 image:
   placement: 3
   caption: "Image credit: [**unsplash**](https://unsplash.com/photos/a0TJ3hy-UD8)"
-  filename: https://unsplash.com/photos/a0TJ3hy-UD8
+  filename: featured.jpg
 ---
 
 Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
