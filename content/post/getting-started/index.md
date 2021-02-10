@@ -20,8 +20,7 @@ categories:
   - 教程
 projects: []
 image:
-  caption: "Image credit: [**John Moeses
-    Bauan**](https://unsplash.com/photos/OGZtQF8iC0g)"
+  caption: "Image credit: [**ziming**](phil-botha-a0tj3hy-ud8-unsplash.jpg)"
   focal_point: ""
   placement: 2
   preview_only: false
