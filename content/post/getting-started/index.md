@@ -21,7 +21,7 @@ categories:
   - 教程
 projects: []
 image:
-  caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/gnCmc_QHVTc)"
+  caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/LoxgI6ebgoI)"
   focal_point: ""
   placement: 2
   preview_only: false
