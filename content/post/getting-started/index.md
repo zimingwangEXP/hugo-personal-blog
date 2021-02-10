@@ -10,8 +10,7 @@ summary: Welcome 👋 We know that first impressions are important, so we've
 draft: false
 featured: false
 authors:
-  - admin
-  - 吳恩達
+  - 王自铭
 lastmod: 2020-12-13T00:00:00.000Z
 tags:
   - Academic
