@@ -20,7 +20,7 @@ categories:
   - 教程
 projects: []
 image:
-  caption: "Image credit: [**ziming**](phil-botha-a0tj3hy-ud8-unsplash.jpg)"
+  caption: "Image credit: [**ziming**](https://unsplash.com/photos/a0TJ3hy-UD8)"
   focal_point: ""
   placement: 2
   preview_only: false
