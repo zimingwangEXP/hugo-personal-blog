@@ -6,7 +6,7 @@ diagram: true
 highlight: true
 image:
   placement: 3
-  caption: "Image credit: [*unsplash**](https://unsplash.com/photos/a0TJ3hy-UD8)"
+  caption: "Image credit: [**unsplash**](https://unsplash.com/photos/a0TJ3hy-UD8)"
   filename: https://unsplash.com/photos/a0TJ3hy-UD8
 ---
 
