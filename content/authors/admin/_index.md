@@ -56,4 +56,4 @@ social:
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 #email: ""
 ---
-My name is Wang Ziming. My research interests include neuromorphic computation, machine learning, human language processing.
+I'm Wang Ziming, a PHD student. My research interests include neuromorphic computation, machine learning, human language processing.
