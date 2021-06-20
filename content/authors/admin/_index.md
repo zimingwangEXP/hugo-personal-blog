@@ -6,11 +6,11 @@ title: Ziming Wang
 superuser: true
 
 # Role/position
-role: Computer Science PHD Student
+role: PHD Student 
 
 # Organizations/Affiliations
 organizations:
-- name: SCU ZJU
+- name: ZJU
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
@@ -24,14 +24,14 @@ bio: My research interests include neuromorphic computation, machine learning, h
 #education:
 #  courses:
 #  - course: PhD in Artificial Intelligence
-#    institution: Stanford University
-#    year: 2012
-#  - course: MEng in Artificial Intelligence
+#    institution: Zhejiang University
+#    year: 2020-?
+<!-- #  - course: MEng in Artificial Intelligence
 #    institution: Massachusetts Institute of Technology
-#    year: 2009
+#    year: 2009 -->
 #  - course: BSc in Computer Science
 #    institution: Sichuan University
-#    year: 2020
+#    year: 2016-2020
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -41,12 +41,12 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'about/#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
+<!-- - icon: twitter
   icon_pack: fab
   link: https://twitter.com/GeorgeCushen
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/gcushen -->
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
