@@ -10,7 +10,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-{{< toc hide_on="xl" >}}
+{{< toc >}}
 ## PCA之前
 
 机器学习包括有监督、无监督和强化学习。
@@ -56,13 +56,13 @@ image:
    \\ w_2^T
    \\ ...
    \\ w_m^T
-  \end{bmatrix}=
+  \end{bmatrix}=\\
    \begin{bmatrix}
    w_1^Tx_i
    \\ w_2^Tx_i
    \\ ...
    \\ w_m^Tx_i
-  \end{bmatrix}= \begin{bmatrix}
+  \end{bmatrix}=\\  \begin{bmatrix}
    <w_1,x_i>
    \\ <w_2,x_i>
    \\ ...
