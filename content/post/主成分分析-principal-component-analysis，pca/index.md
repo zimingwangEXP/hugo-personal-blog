@@ -53,24 +53,24 @@ image:
   $$y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i= 
 \begin{bmatrix}
    w_1^T
-   \\\\\\ w_2^T
-   \\\\\\ ...
-   \\\\\\ w_m^T
+   \\\\ w_2^T
+   \\\\ ...
+   \\\\ w_m^T
 \end{bmatrix}=
-\\\\\\
+\\\\
    \begin{bmatrix}
    w_1^Tx_i
-   \\\\\\ w_2^Tx_i
-   \\\\\\ ...
-   \\\\\\ w_m^Tx_i
-  \end{bmatrix}=\\\\\\ 
+   \\\\ w_2^Tx_i
+   \\\\ ...
+   \\\\ w_m^Tx_i
+  \end{bmatrix}=\\\\ 
 
  \begin{bmatrix}
    <w_1,x_i>
-   \\\\\\ <w_2,x_i>
+   \\\\ <w_2,x_i>
    \\\\\\ ...
-   \\\\\\ <w_m,x_i>
-  \end{bmatrix}\\\\\\
+   \\\\ <w_m,x_i>
+  \end{bmatrix}\\\\
   W = [w_1,w_2,..,w_m] \in R^{n \times  m}
   $$
 
