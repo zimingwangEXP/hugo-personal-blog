@@ -73,6 +73,7 @@ W=\left[w_{1}, w_{2}, \ldots, w_{m}\right] \in R^{n \times m}
 \end{array}
 \end{equation}
 $$
+\\
 $$ 
 f(n)=\begin{cases}
 n/2, & \text{如果$ x<=2 $}\\
