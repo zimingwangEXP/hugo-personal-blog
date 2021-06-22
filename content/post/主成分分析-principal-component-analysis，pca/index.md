@@ -79,5 +79,79 @@ $$
 * 一般而言，线性降维对投影向量有正交单位的约束条件（orthonormal）,即$W^TW=I$
 
 <img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210621003153792.png" alt="image-20210621003153792" style="zoom:40%;" />
+### PCA算法
+
+> 理解算法背后的准则往往比理解算法本身更重要	
+
+#### 最大方差	 
+
+​	PCA算法从线性投影的角度来看所遵循的主要准则为最大方差原则。不严格的说，方差代表信息，最大方差即为最大化投影后的整体信息量。基于此准则，考虑到投影向量是正交单位的，我们可以逐投影向量的写出PCA的最优化问题，其中投影向量按投影方差排序，即$var(w_1^TX)\ge var(w_2^TX)\ge...\ge var(w_m^TX)$。
+
+对于$w_1$，优化目标为
+$$
+w_1 =\mathop{\arg\max}\limits_{w}\frac{1}{p-1}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 \\
+s.t. \quad w^Tw =1 \\
+其中 \quad \bar{x} = \frac{1}{p}\sum_{i=1}^{p}x_i
+$$
+使用拉格朗日乘子法化简上述等式约束下的凸优化问题
+$$
+\begin{aligned}
+w_1 &=\mathop{\arg\max}\limits_{w}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 -\lambda (w^Tw-1)\\
+&=\mathop{\arg\max}\limits_{w}\left(\sum_{i=1}^{p}w^T(x_i-\bar{x})(x_i-\bar{x})^Tw\right ) -\lambda w^Tw \\
+&=\mathop{\arg\max}\limits_{w}w^T\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )w -\lambda w^Tw\\
+&=\mathop{\arg\max}\limits_{w}w^TSw -\lambda w^Tw\\
+其中S &=\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right ),且易知S为对称矩阵且半正定的
+
+\end{aligned}
+$$
+令导数等0求解$w_1$（注：此处矩阵求导使用分子布局, 维度与前文保持一致）
+$$
+\begin{aligned}
+\frac{\mathrm{d} (w^TSw-\lambda w^Tw )}{\mathrm{d} w} &=  \frac{\mathrm{d} (w^TSw)}{\mathrm{d} w}-\frac{(\lambda w^Tw )}{\mathrm{d} w} \\
+&=\frac{\mathrm{d} w^T Sw+w^TS\mathrm{d}w}{\mathrm{d} w} -\lambda\frac{\mathrm{d} w^T w+w^T\mathrm{d}w}{\mathrm{d} w}\\
+&=w^TS^T+w^TS-2\lambda w^T\\
+&=2w^TS^T-2\lambda w^T\\
+&=0 \\
+\\
+2w^TS^T-2\lambda w^T = 0&\rightleftharpoons  Sw=\lambda w\\
+\end{aligned}
+$$
+$w$为非零向量,因此易知上述优化问题的解即投影向量$w_1$必然为协方差矩阵$S$的某一个特征向量。按照约定的规则$var(w_1^TX)\ge var(w_2^TX)\ge...\ge var(w_m^TX)$，$w_1$应为方差最大的特征向量,而由下式易知特征向量所对应的特征值$\lambda$即为投影后的方差。因此只需求出协方差矩阵$S$的$p$个特征值，然后从取最大特征值所对应的特征子空间选取一个非零的向量即得到$w_1$。
+$$
+var(w^TX) = w^TSw = \lambda w^Tw = \lambda
+$$
+下一个问题是，投影向量$w_1$求出来了，那么$w_2$,$w_3$,...$w_m$呢?
+
+直观的来看，对于$w_2$同样有最大化方差的要求，因此和$w_1$一样必然为协方差矩阵$S$的某一个特征向量，但是按照正交性的要求，我们要求$w_2$必须和$w_1$正交。那么问题就转变成求一个$w_1$正交的特征向量，并且特征值尽可能大。我们知道对称矩阵$S$的$p$个特征值（算上重复的）是确定的，而每个特征值的几何重数（特征子空间的维度）等于其算数重数$c_i$，因此对于上述问题，必然是按照降序对特征值排序，然后对每个特征值$\lambda_i$对应的特征子空间选$c_i$个单位正交基，所得到的基向量必然为最优的投影方向$w_i$。
+
+我们定义$w_2$的最优化方程：
+$$
+w_2 =\mathop{\arg\max}\limits_{w}w^TSw \\
+s.t. \quad
+w^Tw =1\\
+\quad \quad \quad w_1^Tw=0
+$$
+拉格朗日乘子法求解：
+$$
+\begin{aligned}
+w_2 &=\mathop{\arg\max}\limits_{w}(w^TSw -\lambda(w^Tw-1)-\beta w_1^Tw) \\
+\frac{\mathrm{d} (w^TSw-\lambda w^Tw-\beta w_1^Tw )}{\mathrm{d} w} &= 2w^TS^T-2\lambda w^T-\beta w_1^T = 0 \\
+2w^TS^T-2\lambda w^T-\beta w_1^T = 0 &\rightleftharpoons 2Sw-2\lambda w-\beta w_1 = 0\\
+&\rightleftharpoons 2w_1^TSw-2\lambda w_1^T w-\beta w_1^T w_1 =0\\
+&\rightleftharpoons 2(S^Tw_1)^Tw-0-\beta=0\\
+&\rightleftharpoons 2(Sw_1)^Tw-0-\beta=0 \\
+&\rightleftharpoons 2(\lambda_1w_1)^Tw-0-\beta =0\\
+&\rightleftharpoons \beta =0\\
+\\
+&\because \quad \beta = 0, \\& \therefore\quad  2w^TS^T-2\lambda w^T= 0
+
+\\& \therefore\quad  Sw=\lambda w
+
+
+\end{aligned}
+$$
+易知$w_2$为与$w_1$正交的特征值第二大的特征向量
+
+同理，易知$w_i$为特征值第$i$大的特征向量。因此按照降序对特征值排序，然后对每个特征值$\lambda_i$对应的特征子空间选$c_i$个单位正交基，所得到的基向量则组成了PCA的投影方向$\{w_1,w_2,...,w_m\},w_m \in R^n$。
 
 
