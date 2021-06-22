@@ -52,7 +52,6 @@ image:
 * 如下图所示，问题即转换为需要找到一组投影向量$\{w_1,w_2,...,w_m\},w_m \in R^n$将原始数据点$x_i$投影到投影向量所张成的$m$维子空间中,得到投影点$y_i$。即
 <div>
 $$
-\begin{equation}
 \begin{array}{c}
 y_{i}=W^{T} x_{i}=\left[w_{1}, w_{2}, \ldots, w_{m}\right]^{T} x_{i}=\left[\begin{array}{c}
 w_{1}^{T} \\
@@ -72,8 +71,8 @@ w_{m}^{T} x_{i}
 \end{array}\right] \\
 W=\left[w_{1}, w_{2}, \ldots, w_{m}\right] \in R^{n \times m}
 \end{array}
-\end{equation}
-$$</div>
+$$
+</div>
 
 
 
