@@ -89,31 +89,31 @@ $$
 
 对于$w_1$，优化目标为
 $$
-w_1 =\mathop{\arg\max}\limits_{w}\frac{1}{p-1}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 \\
-s.t. \quad w^Tw =1 \\
+w_1 =\mathop{\arg\max}\limits_{w}\frac{1}{p-1}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 \\\\
+s.t. \quad w^Tw =1 \\\\
 其中 \quad \bar{x} = \frac{1}{p}\sum_{i=1}^{p}x_i
 $$
 使用拉格朗日乘子法化简上述等式约束下的凸优化问题
 $$
 \begin{aligned}
-w_1 &=\mathop{\arg\max}\limits_{w}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 -\lambda (w^Tw-1)\\
-&=\mathop{\arg\max}\limits_{w}\left(\sum_{i=1}^{p}w^T(x_i-\bar{x})(x_i-\bar{x})^Tw\right ) -\lambda w^Tw \\
-&=\mathop{\arg\max}\limits_{w}w^T\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )w -\lambda w^Tw\\
-&=\mathop{\arg\max}\limits_{w}w^TSw -\lambda w^Tw\\
-
+w_1 &=\mathop{\arg\max}\limits_{w}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 -\lambda (w^Tw-1)\\\\
+&=\mathop{\arg\max}\limits_{w}\left(\sum_{i=1}^{p}w^T(x_i-\bar{x})(x_i-\bar{x})^Tw\right ) -\lambda w^Tw \\\\
+&=\mathop{\arg\max}\limits_{w}w^T\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )w -\lambda w^Tw\\\\
+&=\mathop{\arg\max}\limits_{w}w^TSw -\lambda w^Tw\\\\
+其中S &=\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right ),且易知S为对称矩阵且半正定的
 
 \end{aligned}
 $$
 令导数等0求解$w_1$（注：此处矩阵求导使用分子布局, 维度与前文保持一致）
 $$
 \begin{aligned}
-\frac{\mathrm{d} (w^TSw-\lambda w^Tw )}{\mathrm{d} w} &=  \frac{\mathrm{d} (w^TSw)}{\mathrm{d} w}-\frac{(\lambda w^Tw )}{\mathrm{d} w} \\
-&=\frac{\mathrm{d} w^T Sw+w^TS\mathrm{d}w}{\mathrm{d} w} -\lambda\frac{\mathrm{d} w^T w+w^T\mathrm{d}w}{\mathrm{d} w}\\
-&=w^TS^T+w^TS-2\lambda w^T\\
-&=2w^TS^T-2\lambda w^T\\
-&=0 \\
-\\
-2w^TS^T-2\lambda w^T = 0&\rightleftharpoons  Sw=\lambda w\\
+\frac{\mathrm{d} (w^TSw-\lambda w^Tw )}{\mathrm{d} w} &=  \frac{\mathrm{d} (w^TSw)}{\mathrm{d} w}-\frac{(\lambda w^Tw )}{\mathrm{d} w} \\\\
+&=\frac{\mathrm{d} w^T Sw+w^TS\mathrm{d}w}{\mathrm{d} w} -\lambda\frac{\mathrm{d} w^T w+w^T\mathrm{d}w}{\mathrm{d} w}\\\\
+&=w^TS^T+w^TS-2\lambda w^T\\\\
+&=2w^TS^T-2\lambda w^T\\\\
+&=0 \\\\
+\\\\
+2w^TS^T-2\lambda w^T = 0&\rightleftharpoons  Sw=\lambda w\\\\
 \end{aligned}
 $$
 $w$为非零向量,因此易知上述优化问题的解即投影向量$w_1$必然为协方差矩阵$S$的某一个特征向量。按照约定的规则$var(w_1^TX)\ge var(w_2^TX)\ge...\ge var(w_m^TX)$，$w_1$应为方差最大的特征向量,而由下式易知特征向量所对应的特征值$\lambda$即为投影后的方差。因此只需求出协方差矩阵$S$的$p$个特征值，然后从取最大特征值所对应的特征子空间选取一个非零的向量即得到$w_1$。
@@ -126,26 +126,26 @@ $$
 
 我们定义$w_2$的最优化方程：
 $$
-w_2 =\mathop{\arg\max}\limits_{w}w^TSw \\
+w_2 =\mathop{\arg\max}\limits_{w}w^TSw \\\\
 s.t. \quad
-w^Tw =1\\
+w^Tw =1\\\\
 \quad \quad \quad w_1^Tw=0
 $$
 拉格朗日乘子法求解：
 $$
 \begin{aligned}
-w_2 &=\mathop{\arg\max}\limits_{w}(w^TSw -\lambda(w^Tw-1)-\beta w_1^Tw) \\
-\frac{\mathrm{d} (w^TSw-\lambda w^Tw-\beta w_1^Tw )}{\mathrm{d} w} &= 2w^TS^T-2\lambda w^T-\beta w_1^T = 0 \\
-2w^TS^T-2\lambda w^T-\beta w_1^T = 0 &\rightleftharpoons 2Sw-2\lambda w-\beta w_1 = 0\\
-&\rightleftharpoons 2w_1^TSw-2\lambda w_1^T w-\beta w_1^T w_1 =0\\
-&\rightleftharpoons 2(S^Tw_1)^Tw-0-\beta=0\\
-&\rightleftharpoons 2(Sw_1)^Tw-0-\beta=0 \\
-&\rightleftharpoons 2(\lambda_1w_1)^Tw-0-\beta =0\\
-&\rightleftharpoons \beta =0\\
-\\
-&\because \quad \beta = 0, \\& \therefore\quad  2w^TS^T-2\lambda w^T= 0
+w_2 &=\mathop{\arg\max}\limits_{w}(w^TSw -\lambda(w^Tw-1)-\beta w_1^Tw) \\\\
+\frac{\mathrm{d} (w^TSw-\lambda w^Tw-\beta w_1^Tw )}{\mathrm{d} w} &= 2w^TS^T-2\lambda w^T-\beta w_1^T = 0 \\\\
+2w^TS^T-2\lambda w^T-\beta w_1^T = 0 &\rightleftharpoons 2Sw-2\lambda w-\beta w_1 = 0\\\\
+&\rightleftharpoons 2w_1^TSw-2\lambda w_1^T w-\beta w_1^T w_1 =0\\\\
+&\rightleftharpoons 2(S^Tw_1)^Tw-0-\beta=0\\\\
+&\rightleftharpoons 2(Sw_1)^Tw-0-\beta=0 \\\\
+&\rightleftharpoons 2(\lambda_1w_1)^Tw-0-\beta =0\\\\
+&\rightleftharpoons \beta =0\\\\
+\\\\
+&\because \quad \beta = 0, \\\\& \therefore\quad  2w^TS^T-2\lambda w^T= 0
 
-\\& \therefore\quad  Sw=\lambda w
+\\\\& \therefore\quad  Sw=\lambda w
 
 
 \end{aligned}
