@@ -168,18 +168,17 @@ $$
 因此，最小化重构误差的最优化方程如下所示:
 $$
 \begin{aligned}
-W &=\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||WW^Tx_i-x_i||^2 \\\\
-&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}(x_i^T(WW^T-I)^T(WW^T-I)x_i)\\\\
-&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}x_i^T(-WW^T)x_i\\\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(x_i^TWW^Tx_i)\\\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\\\
-&=\mathop{\arg\max}\limits_{W}tr(W^T\sum_{i=1}^p(x_ix_i^T)W)\\\\
-&=\mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)\\\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\\\\
-
-s.t. &\quad W^TW =I \\\\
-where \quad \hat{S}&=\sum_{i=1}^p(x_ix_i^T)
+W &=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|W W^{T} x_{i}-x_{i}\right\|^{2} \\\\
+&=\underset{W}{\arg \min } \sum_{i=1}^{p}\left(x_{i}^{T}\left(W W^{T}-I\right)^{T}\left(W W^{T}-I\right) x_{i}\right) \\\\
+&=\underset{W}{\arg \min } \sum_{i=1}^{p} x_{i}^{T}\left(-W W^{T}\right) x_{i} \\\\
+&=\underset{W}{\arg \max } \sum_{i=1}^{p} \operatorname{tr}\left(x_{i}^{T} W W^{T} x_{i}\right) \\\\
+&=\underset{W}{\arg \max } \sum_{i=1}^{p} \operatorname{tr}\left(W^{T} x_{i} x_{i}^{T} W\right) \\\\
+&=\underset{W}{\arg \max } \sum_{i=1}^{p} \operatorname{tr}\left(W^{T} x_{i} x_{i}^{T} W\right) \\\\
+&=\underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right) W\right) \\\\\
+&=\underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \hat{S} W\right) \\\\
+&=\underset{W}{\arg \max } \sum_{i=1}^{m}\left(w_{i}^{T} \hat{S} w_{i}\right) \\\\
+\text { s.t. } & W^{T} W=I \\
+\text { where } \hat{S} &=\sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right)
 \end{aligned}
 $$
 为了对比，重写原始逐投影向量的最大化方差目标函数为矩阵形式
