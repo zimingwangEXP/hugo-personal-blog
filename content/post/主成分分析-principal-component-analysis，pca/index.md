@@ -1,5 +1,6 @@
 ---
 title: 主成分分析 ( Principal Component Analysis，PCA )
+subtitle: 经典投影视角
 date: 2021-06-22T11:53:25.527Z
 summary: ""
 draft: false
@@ -9,7 +10,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-{{< toc >}}
+{{< toc hide_on="xl" >}}
 ## PCA之前
 
 机器学习包括有监督、无监督和强化学习。
