@@ -129,10 +129,13 @@ $$
 
 我们定义$w_2$的最优化方程：
 $$
+\begin{array}
 w_2 =\mathop{\arg\max}\limits_{w}w^TSw \\\\
 s.t. \quad
 w^Tw =1\\\\
 \quad \quad \quad w_1^Tw=0
+\end{array}
+
 $$
 拉格朗日乘子法求解：
 $$
