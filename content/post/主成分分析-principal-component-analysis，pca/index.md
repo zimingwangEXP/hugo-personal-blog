@@ -53,7 +53,9 @@ image:
 
  $$
 \begin{equation}
+\begin{bmatrix}
   y_i \eq W^Tx_i=[w_1,w_2,..,w_m]^Tx_i \eq
+\end{bmatrix}
  \begin{bmatrix}
    w_1^T
    \\\ w_2^T
@@ -73,7 +75,9 @@ image:
    \\\\\ ...
    \\\\ <w_m,x_i>
   \end{bmatrix}\\\\
+\begin{bmatrix}
   W = [w_1,w_2,..,w_m] \in R^{n \times  m}
+\end{bmatrix}
 
  $$
 
