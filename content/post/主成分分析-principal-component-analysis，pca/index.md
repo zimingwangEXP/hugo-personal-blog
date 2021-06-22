@@ -165,17 +165,17 @@ $$
 因此，最小化重构误差的最优化方程如下所示:
 $$
 \begin{aligned}
-W &=\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||WW^Tx_i-x_i||^2 \\
-&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}(x_i^T(WW^T-I)^T(WW^T-I)x_i)\\
-&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}x_i^T(-WW^T)x_i\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(x_i^TWW^Tx_i)\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\
-&=\mathop{\arg\max}\limits_{W}tr(W^T\sum_{i=1}^p(x_ix_i^T)W)\\
-&=\mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)\\
-&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\\
+W &=\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||WW^Tx_i-x_i||^2 \\\\
+&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}(x_i^T(WW^T-I)^T(WW^T-I)x_i)\\\\
+&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}x_i^T(-WW^T)x_i\\\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(x_i^TWW^Tx_i)\\\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\\\
+&=\mathop{\arg\max}\limits_{W}tr(W^T\sum_{i=1}^p(x_ix_i^T)W)\\\\
+&=\mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)\\\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\\\\
 
-s.t. &\quad W^TW =I \\
+s.t. &\quad W^TW =I \\\\
 where \quad \hat{S}&=\sum_{i=1}^p(x_ix_i^T)
 \end{aligned}
 $$
