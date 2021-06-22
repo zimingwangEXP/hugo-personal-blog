@@ -160,9 +160,9 @@ PCA算法同样也可以从最小重构误差的角度获得
 
 什么是重构？给一个投影点$y_i$，考虑将其在降维前的坐标系表达
 $$
-\begin{aligned}
+\begin{equation}
 \hat{x}_{i}=y_{i, 1} w_{1}+y_{i, 2} w_{2}+\ldots+y_{i, m} w_{m}=\left[w_{1}, w_{2}, \ldots, w_{n}\right] y_{i}=W y_{i}=W W^{T} x_{i}
-\end{aligned}
+\end{equation}
 $$ 
 
 因此，最小化重构误差的最优化方程如下所示:
@@ -177,7 +177,7 @@ W &=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|W W^{T} x_{i}-x_{i
 &=\underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right) W\right) \\\\\
 &=\underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \hat{S} W\right) \\\\
 &=\underset{W}{\arg \max } \sum_{i=1}^{m}\left(w_{i}^{T} \hat{S} w_{i}\right) \\\\
-\text { s.t. } & W^{T} W=I \\
+\text { s.t. } & W^{T} W=I \\\\
 \text { where } \hat{S} &=\sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right)
 \end{aligned}
 $$
