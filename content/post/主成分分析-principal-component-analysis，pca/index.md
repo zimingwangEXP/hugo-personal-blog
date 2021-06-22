@@ -100,7 +100,7 @@ w_1 &=\mathop{\arg\max}\limits_{w}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 -\lambda (
 &=\mathop{\arg\max}\limits_{w}\left(\sum_{i=1}^{p}w^T(x_i-\bar{x})(x_i-\bar{x})^Tw\right ) -\lambda w^Tw \\
 &=\mathop{\arg\max}\limits_{w}w^T\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )w -\lambda w^Tw\\
 &=\mathop{\arg\max}\limits_{w}w^TSw -\lambda w^Tw\\
-其中S &=\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right ),且易知S为对称矩阵且半正定的
+
 
 \end{aligned}
 $$
