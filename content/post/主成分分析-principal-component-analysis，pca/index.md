@@ -140,20 +140,17 @@ $$
 拉格朗日乘子法求解：
 $$
 \begin{aligned}
-w_2 &=\mathop{\arg\max}\limits_{w}(w^TSw -\lambda(w^Tw-1)-\beta w_1^Tw) \\\\
-\frac{\mathrm{d} (w^TSw-\lambda w^Tw-\beta w_1^Tw )}{\mathrm{d} w} &= 2w^TS^T-2\lambda w^T-\beta w_1^T = 0 \\\\
-2w^TS^T-2\lambda w^T-\beta w_1^T = 0 &\rightleftharpoons 2Sw-2\lambda w-\beta w_1 = 0\\\\
-&\rightleftharpoons 2w_1^TSw-2\lambda w_1^T w-\beta w_1^T w_1 =0\\\\
-&\rightleftharpoons 2(S^Tw_1)^Tw-0-\beta=0\\\\
-&\rightleftharpoons 2(Sw_1)^Tw-0-\beta=0 \\\\
-&\rightleftharpoons 2(\lambda_1w_1)^Tw-0-\beta =0\\\\
-&\rightleftharpoons \beta =0\\\\
-\\\\
-&\because \quad \beta = 0, \\\\& \therefore\quad  2w^TS^T-2\lambda w^T= 0
-
-\\\\& \therefore\quad  Sw=\lambda w
-
-
+w_{2} &=\underset{w}{\arg \max }\left(w^{T} S w-\lambda\left(w^{T} w-1\right)-\beta w_{1}^{T} w\right) \\\\
+\frac{\mathrm{d}\left(w^{T} S w-\lambda w^{T} w-\beta w_{1}^{T} w\right)}{\mathrm{d} w} &=2 w^{T} S^{T}-2 \lambda w^{T}-\beta w_{1}^{T}=0 \\\\
+2 w^{T} S^{T}-2 \lambda w^{T}-\beta w_{1}^{T}=0 & \rightleftharpoons 2 S w-2 \lambda w-\beta w_{1}=0 \\\\
+& \rightleftharpoons 2 w_{1}^{T} S w-2 \lambda w_{1} w-\beta w_{1}^{T} w_{1}=0 \\\\
+& \rightleftharpoons 2\left(S^{T} w_{1}\right)^{T} w-0-\beta=0 \\\\
+& \rightleftharpoons 2\left(S w_{1}\right)^{T} w-0-\beta=0 \\\\
+& \rightleftharpoons 2\left(\lambda_{1} w_{1}\right)^{T} w-0-\beta=0 \\\\
+& \rightleftharpoons \beta=0 \\\\
+& \because \beta=0, \\\\
+& \therefore 2 w^{T} S^{T}-2 \lambda w^{T}=0 \\\\
+& \therefore S w=\lambda w
 \end{aligned}
 $$
 易知$w_2$为与$w_1$正交的特征值第二大的特征向量
