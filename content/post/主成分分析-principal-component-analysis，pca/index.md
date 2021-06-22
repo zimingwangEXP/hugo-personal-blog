@@ -99,11 +99,11 @@ $$
 $$
 \begin{array}{l}
 \begin{aligned}
-w_{1} &=\underset{w}{\arg \max } \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2}-\lambda\left(w^{T} w-1\right) \\
-&=\underset{w}{\arg \max }\left(\sum_{i=1}^{p} w^{T}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T} w\right)-\lambda w^{T} w \\
-&=\underset{w}{\arg \max } w^{T}\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right) w-\lambda w^{T} w \\
+w_{1} &=\underset{w}{\arg \max } \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2}-\lambda\left(w^{T} w-1\right) \\\\
+&=\underset{w}{\arg \max }\left(\sum_{i=1}^{p} w^{T}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T} w\right)-\lambda w^{T} w \\\\
+&=\underset{w}{\arg \max } w^{T}\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right) w-\lambda w^{T} w \\\\
 &=\underset{w}{\arg \max } w^{T} S w-\lambda w^{T} w
-\end{aligned}\\
+\end{aligned}\\\\
 \text { 其中 } S=\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right), \text { 且易知 } S \text { 为对称矩阵且半正定的 }
 \end{array}
 $$
