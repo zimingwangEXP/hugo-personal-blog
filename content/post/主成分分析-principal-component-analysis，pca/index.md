@@ -129,7 +129,7 @@ $$
 
 我们定义$w_2$的最优化方程：
 $$
-\begin{array}
+\begin{array}{l}
 w_2 =\mathop{\arg\max}\limits_{w}w^TSw \\\\
 s.t. \quad
 w^Tw =1\\\\
