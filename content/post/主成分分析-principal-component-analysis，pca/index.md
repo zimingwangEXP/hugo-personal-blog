@@ -50,19 +50,22 @@ image:
 * 对于线性降维，不失一般性的令$f$为单位线性变换，$b$为零向量
 
 * 如下图所示，问题即转换为需要找到一组投影向量$\{w_1,w_2,...,w_m\},w_m \in R^n$将原始数据点$x_i$投影到投影向量所张成的$m$维子空间中,得到投影点$y_i$。即
-  $$
-  y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i= \begin{bmatrix}
+  $$y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i= 
+\begin{bmatrix}
    w_1^T
    \\ w_2^T
    \\ ...
    \\ w_m^T
-  \end{bmatrix}=\\
+\end{bmatrix}=
+\\
    \begin{bmatrix}
    w_1^Tx_i
    \\ w_2^Tx_i
    \\ ...
    \\ w_m^Tx_i
-  \end{bmatrix}=\\  \begin{bmatrix}
+  \end{bmatrix}=\\ 
+
+ \begin{bmatrix}
    <w_1,x_i>
    \\ <w_2,x_i>
    \\ ...
