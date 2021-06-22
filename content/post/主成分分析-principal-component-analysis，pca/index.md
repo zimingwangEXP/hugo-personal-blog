@@ -87,12 +87,13 @@ $$
 
 ​	PCA算法从线性投影的角度来看所遵循的主要准则为最大方差原则。不严格的说，方差代表信息，最大方差即为最大化投影后的整体信息量。基于此准则，考虑到投影向量是正交单位的，我们可以逐投影向量的写出PCA的最优化问题，其中投影向量按投影方差排序，即$var(w_1^TX)\ge var(w_2^TX)\ge...\ge var(w_m^TX)$。
 
-对于$w_1$，优化目标为（HHH）
+对于$w_1$，优化目标为
 $$
-w_1 =\mathop{\arg\max}\limits_{w}\frac{1}{p-1}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 
-\\\\
-s.t. \quad w^Tw =1 \\\\
-其中 \quad \bar{x} = \frac{1}{p}\sum_{i=1}^{p}x_i
+\begin{array}{r}
+w_{1}=\underset{w}{\arg \max } \frac{1}{p-1} \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2} \\\\
+\text { s.t. } w^{T} w=1 \\\\
+\text { 其中 } \quad \bar{x}=\frac{1}{p-1} \sum_{i=1}^{p} x_{i}
+\end{array}
 $$
 使用拉格朗日乘子法化简上述等式约束下的凸优化问题
 $$
