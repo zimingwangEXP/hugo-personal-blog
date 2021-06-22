@@ -50,6 +50,7 @@ image:
 * 对于线性降维，不失一般性的令$f$为单位线性变换，$b$为零向量
 
 * 如下图所示，问题即转换为需要找到一组投影向量$\{w_1,w_2,...,w_m\},w_m \in R^n$将原始数据点$x_i$投影到投影向量所张成的$m$维子空间中,得到投影点$y_i$。即
+<div>
 $$
 \begin{equation}
 \begin{array}{c}
@@ -72,14 +73,8 @@ w_{m}^{T} x_{i}
 W=\left[w_{1}, w_{2}, \ldots, w_{m}\right] \in R^{n \times m}
 \end{array}
 \end{equation}
-$$
-\\
-$$ 
-f(n)=\begin{cases}
-n/2, & \text{如果$ x<=2 $}\\
-3n+1, & \text{如果$ x>2 $}
-\end{cases}
-$$
+$$</div>
+
 
 
 * 一般而言，线性降维对投影向量有正交单位的约束条件（orthonormal）,即$W^TW=I$
