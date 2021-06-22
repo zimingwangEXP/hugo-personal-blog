@@ -97,14 +97,15 @@ w_1 =\mathop{\arg\max}\limits_{w}\frac{1}{p-1}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^
 $$
 使用拉格朗日乘子法化简上述等式约束下的凸优化问题
 $$
+\begin{array}{l}
 \begin{aligned}
-w_1 &=\mathop{\arg\max}\limits_{w}\sum_{i=1}^{p}(w^Tx_i-w^T\bar{x})^2 -\lambda (w^Tw-1)\\\\
-&=\mathop{\arg\max}\limits_{w}\left(\sum_{i=1}^{p}w^T(x_i-\bar{x})(x_i-\bar{x})^Tw\right ) -\lambda w^Tw \\\\
-&=\mathop{\arg\max}\limits_{w}w^T\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )w -\lambda w^Tw\\\\
-&=\mathop{\arg\max}\limits_{w}w^TSw -\lambda w^Tw\\\\
-其中S &=\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right ),且易知S为对称矩阵且半正定的
-
-\end{aligned}
+w_{1} &=\underset{w}{\arg \max } \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2}-\lambda\left(w^{T} w-1\right) \\
+&=\underset{w}{\arg \max }\left(\sum_{i=1}^{p} w^{T}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T} w\right)-\lambda w^{T} w \\
+&=\underset{w}{\arg \max } w^{T}\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right) w-\lambda w^{T} w \\
+&=\underset{w}{\arg \max } w^{T} S w-\lambda w^{T} w
+\end{aligned}\\
+\text { 其中 } S=\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right), \text { 且易知 } S \text { 为对称矩阵且半正定的 }
+\end{array}
 $$
 令导数等0求解$w_1$（注：此处矩阵求导使用分子布局, 维度与前文保持一致）
 $$
