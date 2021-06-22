@@ -9,6 +9,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
+[toc]
 ## PCA之前
 
 机器学习包括有监督、无监督和强化学习。
