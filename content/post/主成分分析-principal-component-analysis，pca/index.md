@@ -56,10 +56,10 @@ image:
   y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i=
  \begin{bmatrix}
    w_1^T
-   \\\\ w_2^T
-   \\\\ ...
-   \\\\ w_m^T
-\end{bmatrix}=
+   \\\ w_2^T
+   \\\ ...
+   \\\ w_m^T
+\end{bmatrix} =
 
    \begin{bmatrix}
    w_1^Tx_i
