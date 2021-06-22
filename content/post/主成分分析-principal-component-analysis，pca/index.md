@@ -89,11 +89,13 @@ $$
 
 对于$w_1$，优化目标为
 $$
+$$
 \begin{array}{r}
-w_{1}=\underset{w}{\arg \max } \frac{1}{p-1} \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2} \\\\
-\text { s.t. } w^{T} w=1 \\\\
+w_{1}=\underset{w}{\arg \max } \frac{1}{p-1} \sum_{i=1}^{p}\left(w^{T} x_{i}-w^{T} \bar{x}\right)^{2} \\
+\text { s.t. } \quad w^{T} w=1 \\
 \text { 其中 } \quad \bar{x}=\frac{1}{p-1} \sum_{i=1}^{p} x_{i}
 \end{array}
+$$
 $$
 使用拉格朗日乘子法化简上述等式约束下的凸优化问题
 $$
