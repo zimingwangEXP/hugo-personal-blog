@@ -250,7 +250,7 @@ PCA是线性降维中在最大化方差和最小重构误差上最优的方法
 
   SVD的左奇异向量用于压缩列，在$[x_1,x_2,...,x_n]$这种列布局的情况下即起到去除冗余样本的作用
   $$
-  X_{n \times p}\approx W_{n \times m} \Sigma_{m \times m} V_{p \times m}^{T}\\
+  X_{n \times p}\approx W_{n \times m} \Sigma_{m \times m} V_{p \times m}^{T}\\\\
   Y_{m\times p} = W_{n \times m}^TX_{n \times p} \\\\
   Z_{n \times m} = X_{n\times p}V_{p \times m}\\\\
   where \quad m<n,m<p
