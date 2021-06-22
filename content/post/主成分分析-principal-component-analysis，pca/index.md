@@ -52,8 +52,8 @@ image:
 * 如下图所示，问题即转换为需要找到一组投影向量$\{w_1,w_2,...,w_m\},w_m \in R^n$将原始数据点$x_i$投影到投影向量所张成的$m$维子空间中,得到投影点$y_i$。即
 
  $$
-\begin{aligned}
-  y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i=
+
+  y_i \eq W^Tx_i=[w_1,w_2,..,w_m]^Tx_i \eq
  \begin{bmatrix}
    w_1^T
    \\\ w_2^T
@@ -75,7 +75,6 @@ image:
   \end{bmatrix}\\\\
   W = [w_1,w_2,..,w_m] \in R^{n \times  m}
 
-\end{aligned}
  $$
 
 * 一般而言，线性降维对投影向量有正交单位的约束条件（orthonormal）,即$W^TW=I$
