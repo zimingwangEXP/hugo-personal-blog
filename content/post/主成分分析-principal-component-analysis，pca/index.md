@@ -43,4 +43,34 @@ image:
 * 从特征工程的角度来看变换$f$
   * 对于特征选择（Feature Selection）而言，变换$f$是单位线性变换（恒等映射）, $b$为0向量，$W$是01矩阵 ，并且每列有且仅有一个1
   * 对于特征提取 (Feature Extraction) 而言，变换$f$通常为按照先验知识设计的变换，或者特别设计的神经网络（word embedding, graph embedding）
+#### 线性降维
+
+* 对于线性降维，不失一般性的令$f$为单位线性变换，$b$为零向量
+
+* 如下图所示，问题即转换为需要找到一组投影向量$\{w_1,w_2,...,w_m\},w_m \in R^n$将原始数据点$x_i$投影到投影向量所张成的$m$维子空间中,得到投影点$y_i$。即
+  $$
+  y_i = W^Tx_i=[w_1,w_2,..,w_m]^Tx_i= \begin{bmatrix}
+   w_1^T
+   \\ w_2^T
+   \\ ...
+   \\ w_m^T
+  \end{bmatrix}=
+   \begin{bmatrix}
+   w_1^Tx_i
+   \\ w_2^Tx_i
+   \\ ...
+   \\ w_m^Tx_i
+  \end{bmatrix}= \begin{bmatrix}
+   <w_1,x_i>
+   \\ <w_2,x_i>
+   \\ ...
+   \\ <w_m,x_i>
+  \end{bmatrix}\\
+  W = [w_1,w_2,..,w_m] \in R^{n \times  m}
+  $$
+
+* 一般而言，线性降维对投影向量有正交单位的约束条件（orthonormal）,即$W^TW=I$
+
+<img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210621003153792.png" alt="image-20210621003153792" style="zoom:40%;" />
+
 
