@@ -73,6 +73,13 @@ W=\left[w_{1}, w_{2}, \ldots, w_{m}\right] \in R^{n \times m}
 \end{array}
 \end{equation}
 $$
+$$ 
+f(n)=\begin{cases}
+n/2, & \text{如果$ x<=2 $}\\
+3n+1, & \text{如果$ x>2 $}
+\end{cases}
+$$
+
 
 * 一般而言，线性降维对投影向量有正交单位的约束条件（orthonormal）,即$W^TW=I$
 
