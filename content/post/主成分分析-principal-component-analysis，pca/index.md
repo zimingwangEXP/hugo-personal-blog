@@ -141,7 +141,7 @@ $$
 w_{2} &=\underset{w}{\arg \max }\left(w^{T} S w-\lambda\left(w^{T} w-1\right)-\beta w_{1}^{T} w\right) \\\\
 \frac{\mathrm{d}\left(w^{T} S w-\lambda w^{T} w-\beta w_{1}^{T} w\right)}{\mathrm{d} w} &=2 w^{T} S^{T}-2 \lambda w^{T}-\beta w_{1}^{T}=0 \\\\
 2 w^{T} S^{T}-2 \lambda w^{T}-\beta w_{1}^{T}=0 & \rightleftharpoons 2 S w-2 \lambda w-\beta w_{1}=0 \\\\
-& \rightleftharpoons 2 w_{1}^{T} S w-2 \lambda w_{1} w-\beta w_{1}^{T} w_{1}=0 \\\\
+& \rightleftharpoons 2 w_{1}^{T} S w-2 \lambda w_{1}^T w-\beta w_{1}^{T} w_{1}=0 \\\\
 & \rightleftharpoons 2\left(S^{T} w_{1}\right)^{T} w-0-\beta=0 \\\\
 & \rightleftharpoons 2\left(S w_{1}\right)^{T} w-0-\beta=0 \\\\
 & \rightleftharpoons 2\left(\lambda_{1} w_{1}\right)^{T} w-0-\beta=0 \\\\
@@ -154,5 +154,108 @@ $$
 易知$w_2$为与$w_1$正交的特征值第二大的特征向量
 
 同理，易知$w_i$为特征值第$i$大的特征向量。因此按照降序对特征值排序，然后对每个特征值$\lambda_i$对应的特征子空间选$c_i$个单位正交基，所得到的基向量则组成了PCA的投影方向$\{w_1,w_2,...,w_m\},w_m \in R^n$。
+#### 最小重构误差
+
+PCA算法同样也可以从最小重构误差的角度获得
+
+什么是重构？给一个投影点$y_i$，考虑将其在降维前的坐标系表达$\hat{x}_i = y_{i,1}w_1+y_{i,2}w_2+...+y_{i,m}w_m=[w_1,w_2,..,w_n]y_i=Wy_i=WW^Tx_i$ 
+
+因此，最小化重构误差的最优化方程如下所示:
+$$
+\begin{aligned}
+W &=\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||WW^Tx_i-x_i||^2 \\
+&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}(x_i^T(WW^T-I)^T(WW^T-I)x_i)\\
+&=\mathop{\arg\min}\limits_{W}\sum_{i=1}^{p}x_i^T(-WW^T)x_i\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(x_i^TWW^Tx_i)\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^ptr(W^Tx_ix_i^TW)\\
+&=\mathop{\arg\max}\limits_{W}tr(W^T\sum_{i=1}^p(x_ix_i^T)W)\\
+&=\mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)\\
+&=\mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\\
+
+s.t. &\quad W^TW =I \\
+where \quad \hat{S}&=\sum_{i=1}^p(x_ix_i^T)
+\end{aligned}
+$$
+为了对比，重写原始逐投影向量的最大化方差目标函数为矩阵形式
+$$
+\mathop{\arg\max}\limits_{w}w^TSw\Leftrightarrow \mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\
+s.t. \quad W^TW =I \\
+$$
+事实上，在正交单位的约束下, $cov(y_i,y_j)=w_i^TSw_j=w_i^T\lambda w_j = 0$，这意味着PCA降维以后达到了去关联的效果 ，因此上式中的$W^TSW$必为对角矩阵
+
+<img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210622120531411.png" alt="image-20210622120531411" style="zoom: 67%;" />
+
+对比最大化方差和最小化重构误差的目标函数:
+$$
+最小重构误差： \mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\Leftrightarrow\ \mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)
+\\
+其中 \hat{S}=\sum_{i=1}^p(x_ix_i^T)\\
+最大化方差：\mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\
+其中S =\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )
+$$
+我们可以看出两者之间唯一的区别在于中间的矩阵（散度）不同，当且仅当数据的均值为0时，求出的投影向量才完全相同。这也就是$\frac{x-\mu}{\sigma}$规范化中通过$x-\mu$去均值的意义所在，即去均值以后，得到的主成分（投影方向）不仅是最大化方差的，而且是最小化重构误差的。
+
+> 矩阵表达下的最优化目标函数同样可以使用拉格朗日乘子法求解，区别只是从scalar对vector的求导变为对matrix的求导
+
+#### PCA与SVD、Auto Encoder
+
+PCA和SVD之间存在紧密的联系，事实上sklearn包（机器学习python库）中的PCA就是用SVD求的
+
+<img src="C:\Users\Ziming\AppData\Roaming\Typora\typora-user-images\image-20210622153913926.png" alt="image-20210622153913926" style="zoom: 50%;" />
+
+重写最小重构误差的优化方程如下:
+$$
+W =\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||WW^Tx_i-x_i||^2 \\
+=\mathop{\arg\min}\limits_{W}\frac{1}{p}\sum_{i=1}^{p}||Wv_i-x_i||^2 \\
+
+其中 \quad v_i=W^Tx_i\\ \\
+$$
+
+将多个数据$x_i$拼在一起得到：
+$$
+W =\mathop{\arg\min}\limits_{W}||WV-X||^2_F \\
+X=[x_1,x_2,...,x_p]^T,\\V = [v_1,v_2,...,v_p]\\
+$$
+那么问题就转变成一个矩阵分解问题，我们希望对$X$进行分解成$WV$，使得两者的Frobenius范数最小，其中$W$是正交单的。"最小化Frobenius范数"，"正交", "矩阵分解"这些词很容易就联系到SVD。SVD告诉我们，对任何一个矩阵$X_{n\times m}$可以按照以下分解达成秩$m$下的最大逼近，其中$W_{n\times m}$为$XX^T$（在去均值的数据上，即为最大化方差的$S$，和最小化重构误差中的$\hat{S}$）的特征向量。因此从SVD的角度求投影向量$W$，只需要做SVD分解，然后求出前$m$大的奇异值所对应的左奇异向量即可。
+$$
+X_{n \times p}\approx W_{n \times m} \Sigma_{m \times m} V_{p \times m}^{T}
+$$
+从另一方面来看，当我们把最小重构误差的目标函数视损失函数，$x_i$视为标签，$WW^T$视为对输入$x_i$进行特征抽取的两层线性变化时，PCA就变成了一个特殊的无激活函数的双层线性Autoencoder。并且两层权重互为转置关系。
+
+<img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210622162008377.png" alt="image-20210622162008377" style="zoom:50%;" />
+
+### 优点与局限
+
+PCA是线性降维中在最大化方差和最小重构误差上最优的方法
+
+然而，PCA也存在固有的缺点：
+
+* PCA 不能解决高度非线性分布的数据降维问题，如球面
+* PCA是无监督的算法，对于带标签数据无法充分利用标签信息，因此有了LDA
+* PCA只能处理同一子空间下的降维问题，无法处理不同特征子空间样本降维问题，因此有了CCA
+
+>  最大化方差或者最小重构误差是从线性投影的角度出发理解PCA算法的经典视角。但是从概率角度出发，即从发现数据中的隐变量出发，我们同样可以推导出PCA算法，也称之为PPCA。PPCA算法可以很好的与EM算法结合解决数据缺失的问题,并且可以自动确定数据的主子空间维度。本文面向初学者，故不对PPCA详加叙述，具体可参见Bishop的PRML。
+
+##  代码
+
+## Q&A
+
+**这部分用于记录一些本人学习PCA时想的一些问题**
+
+* 我们使用SVD的左奇异向量可以达到降维的作用，那么右奇异向量呢？
+
+  如下式所示，SVD的左奇异向量用于压缩行，在$[x_1,x_2,...,x_n]$这种列布局的情况下即起到降维的作用
+
+  SVD的左奇异向量用于压缩列，在$[x_1,x_2,...,x_n]$这种列布局的情况下即起到去除冗余样本的作用
+  $$
+  X_{n \times p}\approx W_{n \times m} \Sigma_{m \times m} V_{p \times m}^{T}\\
+  Y_{m\times p} = W_{n \times m}^TX_{n \times p} \\
+  Z_{n \times m} = X_{n\times p}V_{p \times m}\\
+  where \quad m<n,m<p
+  $$
+
+
+
 
 
