@@ -226,7 +226,7 @@ $$
 将多个数据$x_i$拼在一起得到：
 $$
 \begin{array}{c}
-W=\underset{W}{\arg \min }\|W V-X\|_{F}^{2} \\\\
+W=\underset{W}{\arg \min }\Vert W V-X\Vert_{F}^{2} \\\\
 X=\left\[x_{1}, x_{2}, \ldots, x_{p}\right\]^{T} \\\\
 V=\left\[v_{1}, v_{2}, \ldots, v_{p}\right\]
 \end{array}
