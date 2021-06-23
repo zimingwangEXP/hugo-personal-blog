@@ -164,7 +164,7 @@ $\hat{x}_{i}=y_{i, 1} w_{1}+y_{i, 2} w_{2}+\ldots+y_{i, m} w_{m}=\left[w_{1}, w_
 因此，最小化重构误差的最优化方程如下所示:
 $$
 \begin{aligned}
-W &=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|W W^{T} x_{i}-x_{i}\right\|^{2} \\\\
+W &=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|\|W W^{T} x_{i}-x_{i}\right\|\|^{2} \\\\
 &=\underset{W}{\arg \min } \sum_{i=1}^{p}\left(x_{i}^{T}\left(W W^{T}-I\right)^{T}\left(W W^{T}-I\right) x_{i}\right) \\\\
 &=\underset{W}{\arg \min } \sum_{i=1}^{p} x_{i}^{T}\left(-W W^{T}\right) x_{i} \\\\
 &=\underset{W}{\arg \max } \sum_{i=1}^{p} \operatorname{tr}\left(x_{i}^{T} W W^{T} x_{i}\right) \\\\
