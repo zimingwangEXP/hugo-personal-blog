@@ -13,7 +13,7 @@ summary: >-
 draft: false
 featured: false
 image:
-  filename: featured
+  filename: pca.png
   focal_point: Smart
   preview_only: false
 ---
