@@ -193,11 +193,13 @@ $$
 
 对比最大化方差和最小化重构误差的目标函数:
 $$
+\begin{equation}
 最小重构误差： \mathop{\arg\max}\limits_{W}\sum_{i=1}^m(w_i^T\hat{S}w_i)\Leftrightarrow\ \mathop{\arg\max}\limits_{W}tr(W^T\hat{S}W)
-\\
-其中 \hat{S}=\sum_{i=1}^p(x_ix_i^T)\\
-最大化方差：\mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\
+\\\\
+其中 \hat{S}=\sum_{i=1}^p(x_ix_i^T)\\\\
+最大化方差：\mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\\\
 其中S =\left(\sum_{i=1}^{p}(x_i-\bar{x})(x_i-\bar{x})^T\right )
+\end{equation}
 $$
 我们可以看出两者之间唯一的区别在于中间的矩阵（散度）不同，当且仅当数据的均值为0时，求出的投影向量才完全相同。这也就是$\frac{x-\mu}{\sigma}$规范化中通过$x-\mu$去均值的意义所在，即去均值以后，得到的主成分（投影方向）不仅是最大化方差的，而且是最小化重构误差的。
 
