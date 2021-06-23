@@ -160,7 +160,7 @@ PCA算法同样也可以从最小重构误差的角度获得
 
 什么是重构？给一个投影点$y_i$，考虑将其在降维前的坐标系表达 
 
-$\hat{x}_i = y_{i,1}w_1+y_{i,2}w_2+...+y_{i,m}w_m=[w_1,w_2,..,w_n]y_i=Wy_i=WW^Tx_i$ 
+$\hat{x}_i = y_{i,1}w_1+y_{i,2}w_2+...+y_{i,m}w_m=\begin{bmatrix}w_1,w_2,..,w_n\end{bmatrix}y_i=Wy_i=WW^Tx_i$ 
 
 因此，最小化重构误差的最优化方程如下所示:
 $$
