@@ -15,7 +15,6 @@ featured: false
 image:
   placement: 1
   filename: featured.png
-  focal_point: "Center"
   preview_only: true
 ---
 {{< toc >}}
