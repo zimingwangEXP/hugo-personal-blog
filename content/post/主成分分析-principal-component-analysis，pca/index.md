@@ -196,7 +196,7 @@ $$
 \begin{array}{l}
 
 \text { 最小重构误差: } \underset{W}{\arg \max } \sum_{i=1}^{m}\left(w_{i}^{T} \hat{S} w_{i}\right) \Leftrightarrow \underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \hat{S} W\right)\\\\
-\begin{array}{rcr}
+\begin{array}{}
 \text { 其中 } \hat{S}=\sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right) \\\\
 
 \text { 最大化方差: } \underset{W}{\arg \max } \sum_{i=1}^{m} w_{i}^{T} S w_{i} \Leftrightarrow \underset{W}{\arg \max } \operatorname{tr}\left(W^{T} S W\right) \\\\
