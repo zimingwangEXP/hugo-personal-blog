@@ -14,8 +14,8 @@ draft: false
 featured: false
 image:
   filename: featured.png
-  focal_point: Smart
-  preview_only: false
+  focal_point: Center
+  preview_only: true
 ---
 {{< toc >}}
 ## PCA之前
