@@ -16,8 +16,9 @@ image:
   placement: 1
   filename: featured.png
   preview_only: true
-  focal_point: ""
+  focal_point: BOTTOM
   alt_text: ""
+  caption: https://unsplash.com/photos/x3kQTL7yw30
 ---
 {{< toc >}}
 ## PCA之前
