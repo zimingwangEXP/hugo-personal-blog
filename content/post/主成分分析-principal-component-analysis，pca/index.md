@@ -13,8 +13,9 @@ summary: >-
 draft: false
 featured: false
 image:
+  placement: 1
   filename: featured.png
-  focal_point: Center
+  focal_point: "Center"
   preview_only: true
 ---
 {{< toc >}}
