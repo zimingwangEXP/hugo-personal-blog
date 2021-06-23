@@ -16,8 +16,7 @@ image:
   placement: 1
   filename: featured.png
   preview_only: true
-  focal_point: "Bottom"
-
+  focal_point: RIGHT
 ---
 {{< toc >}}
 ## PCA之前
