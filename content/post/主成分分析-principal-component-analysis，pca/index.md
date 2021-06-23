@@ -16,7 +16,7 @@ image:
   placement: 1
   filename: featured.png
   preview_only: true
-  focal_point: "right"
+  focal_point: right
 
 ---
 {{< toc >}}
