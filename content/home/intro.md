@@ -8,7 +8,7 @@ headless: true
 # Order that this section will appear in.
 weight: 10
 
-title: ✏️ 计算机摸鱼博客 
+title: ✏️ 计算机摸鱼指南
 subtitle: '蝉蜕'
 
 design:
