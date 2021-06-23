@@ -2,11 +2,11 @@
 title: 主成分分析 ( Principal Component Analysis，PCA )
 subtitle: 经典投影视角
 date: 2021-06-22T11:53:25.527Z
-summary: |-
+summary: >-
   <!--StartFragment-->
 
-  **从投影的视角看，PCA是一种经典的基于最大化方差或者最小重构误差原则的无监督线性降维算法。**
 
+  **从投影的视角看，PCA是一种经典的基于最大化方差或者最小重构误差原则的无监督线性降维算法。本文尽可能详尽的从以上两个原则推导出PCA算法，分析PCA与SVD分解、AutoEncoder的关联，同时阐述了PCA的优点与不足，最后通过两个案例实践PCA算法。**
 
 
   <!--EndFragment-->
