@@ -5,9 +5,12 @@ math: true
 diagram: true
 highlight: true
 image:
-  placement: 3
+  placement: 1
   caption: "Image credit: [**unsplash**](https://unsplash.com/photos/a0TJ3hy-UD8)"
   filename: featured.jpg
+  focal_point: "Center"
+  preview_only: true
+  alt_text: An optional description of the image for screen readers.
 ---
 
 Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
