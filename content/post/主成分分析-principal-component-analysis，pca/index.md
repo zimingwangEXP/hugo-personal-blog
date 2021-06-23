@@ -210,7 +210,7 @@ $$
 
 PCA和SVD之间存在紧密的联系，事实上sklearn包（机器学习python库）中的PCA就是用SVD求的
 
-<img src="C:\Users\Ziming\AppData\Roaming\Typora\typora-user-images\image-20210622153913926.png" alt="image-20210622153913926" style="zoom: 50%;" />
+<img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210623094351911.png" alt="image-20210623094351911" style="zoom:50%;" />
 
 重写最小重构误差的优化方程如下:
 $$
