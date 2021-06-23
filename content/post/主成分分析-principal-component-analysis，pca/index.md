@@ -61,7 +61,7 @@ w_{m}^{T}
 \end{array}\right]=\left[\begin{array}{c}
 w_{1}^{T} x_{i} \\\\
 w_{2}^{T} x_{i} \\\\
-\ldots \\
+\ldots \\\\
 w_{m}^{T} x_{i}
 \end{array}\right]=\left[\begin{array}{c}
 <w_{1}, x_{i}> \\\\
