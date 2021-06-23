@@ -213,6 +213,7 @@ PCA和SVD之间存在紧密的联系，事实上sklearn包（机器学习python�
 <img src="https://gitee.com/zi-ming-wang/img-cloud-pub/raw/master/image-20210623094351911.png" alt="image-20210623094351911" style="zoom:50%;" />
 
 重写最小重构误差的优化方程如下:
+<div>
 $$
 \begin{array}{c}
 W=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|W W^{T} x_{i}-x_{i}\right\|^{2} \\\\
@@ -220,6 +221,7 @@ W=\underset{W}{\arg \min } \frac{1}{p} \sum_{i=1}^{p}\left\|W W^{T} x_{i}-x_{i}\
 \text { 其中 } v_{i}=W^{T} x_{i}
 \end{array}
 $$
+</div>
 
 将多个数据$x_i$拼在一起得到：
 $$
