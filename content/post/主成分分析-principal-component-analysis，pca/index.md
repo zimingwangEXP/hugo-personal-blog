@@ -180,8 +180,8 @@ $$
 为了对比，重写原始逐投影向量的最大化方差目标函数为矩阵形式
 $$
 \begin{aligned}
-\mathop{\arg\max}\limits_{w}w^TSw\Leftrightarrow \mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\\\
-s.t. \quad W^TW =I \\\\
+\mathop{\arg\max}\limits_{w}w^TSw\Leftrightarrow &\mathop{\arg\max}\limits_{W}\sum_{i=1}^{m}w_i^TSw_i\Leftrightarrow \mathop{\arg\max}\limits_{W}tr(W^TSW)\\\\
+&s.t. \quad W^TW =I \\\\
 \end{aligned}
 $$
 事实上，在正交单位的约束下, $cov(y_i,y_j)=w_i^TSw_j=w_i^T\lambda w_j = 0$，这意味着PCA降维以后达到了去关联的效果 ，因此上式中的$W^TSW$必为对角矩阵
