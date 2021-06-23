@@ -194,9 +194,13 @@ $$
 对比最大化方差和最小化重构误差的目标函数:
 $$
 \begin{array}{l}
+
 \text { 最小重构误差: } \underset{W}{\arg \max } \sum_{i=1}^{m}\left(w_{i}^{T} \hat{S} w_{i}\right) \Leftrightarrow \underset{W}{\arg \max } \operatorname{tr}\left(W^{T} \hat{S} W\right)\\\\
 \begin{array}{r}
-\text { 其中 } \hat{S}=\sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right) \\\\
+\begin{align}
+\text { 其中 } \hat{S}=\sum_{i=1}^{p}\left(x_{i} x_{i}^{T}\right)
+\end{align} \\\\
+
 \text { 最大化方差: } \underset{W}{\arg \max } \sum_{i=1}^{m} w_{i}^{T} S w_{i} \Leftrightarrow \underset{W}{\arg \max } \operatorname{tr}\left(W^{T} S W\right) \\\\
 \text { 其中 } S=\left(\sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)\left(x_{i}-\bar{x}\right)^{T}\right)
 \end{array}
