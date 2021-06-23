@@ -11,7 +11,7 @@ summary: >-
 
   <!--EndFragment-->
 draft: false
-featured: false
+featured: true
 image:
   placement: 1
   filename: featured.png
