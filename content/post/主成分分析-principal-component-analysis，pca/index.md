@@ -224,9 +224,9 @@ $$
 将多个数据$x_i$拼在一起得到：
 $$
 \begin{array}{c}
-
-W =\mathop{\arg\min}\limits_{W}||WV-X||^2_F \\\\
-X=[x_1,x_2,...,x_p]^T,\\\\ V = [v_1,v_2,...,v_p]\\\\
+W=\underset{W}{\arg \min }\|W V-X\|_{F}^{2} \\\\
+X=\left[x_{1}, x_{2}, \ldots, x_{p}\right]^{T} \\\\
+V=\left[v_{1}, v_{2}, \ldots, v_{p}\right]
 \end{array}
 $$
 那么问题就转变成一个矩阵分解问题，我们希望对$X$进行分解成$WV$，使得两者的Frobenius范数最小，其中$W$是正交单的。"最小化Frobenius范数"，"正交", "矩阵分解"这些词很容易就联系到SVD。SVD告诉我们，对任何一个矩阵$X_{n\times m}$可以按照以下分解达成秩$m$下的最大逼近，其中$W_{n\times m}$为$XX^T$（在去均值的数据上，即为最大化方差的$S$，和最小化重构误差中的$\hat{S}$）的特征向量。因此从SVD的角度求投影向量$W$，只需要做SVD分解，然后求出前$m$大的奇异值所对应的左奇异向量即可。
